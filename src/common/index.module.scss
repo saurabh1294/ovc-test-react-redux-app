@@ -1,0 +1,38 @@
+// Global module css properties go here
+.Error {
+  font-size: 14px;
+  color: red;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.Success {
+  font-size: 14px;
+  color: green;
+  margin-top: 10px;
+  position: absolute;
+}
+
+.Heading {
+  font-size: 24px;
+}
+
+.ColFormat {
+  margin-left: -5%;
+}
+
+.Center {
+  text-align: center;
+}
+
+.HeadingMargin {
+  margin: 40%;
+}
+
+.ServiceComment {
+  width: 200px;
+}
+
+.Row {
+  display: flex;
+}
