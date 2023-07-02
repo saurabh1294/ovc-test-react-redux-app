@@ -44,3 +44,12 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Environment variables
+
+Create a file called .env.local and add the below lines in it
+
+
+REACT_APP_USERS_BASE_URL='https://jsonplaceholder.typicode.com/users'
+REACT_APP_POSTS_BASE_URL='https://jsonplaceholder.typicode.com/posts'
+
