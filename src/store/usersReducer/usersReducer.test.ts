@@ -1,38 +1,38 @@
-import { usersReducer, UserState } from './usersReducer';
-import { UserActionTypes } from './usersActions';
+import { usersReducer, UserState } from "./usersReducer";
+import { UserActionTypes } from "./usersActions";
 
-describe('usersReducer', () => {
+describe("usersReducer", () => {
   const initialState: UserState = {
     isLoading: false,
     failed: false,
     users: [
       {
         id: 1,
-        name: '',
-        username: '',
-        email: '',
+        name: "",
+        username: "",
+        email: "",
         address: {
-          street: '',
-          suite: '',
-          city: '',
-          zipcode: '',
+          street: "",
+          suite: "",
+          city: "",
+          zipcode: "",
           geo: {
-            lat: '',
-            lng: '',
+            lat: "",
+            lng: "",
           },
         },
-        phone: '',
-        website: '',
+        phone: "",
+        website: "",
         company: {
-          name: '',
-          catchPhrase: '',
-          bs: '',
+          name: "",
+          catchPhrase: "",
+          bs: "",
         },
       },
     ],
   };
 
-  test('should handle GET_USERS action type', () => {
+  test("should handle GET_USERS action type", () => {
     const action = {
       type: UserActionTypes.GET_USERS,
     };
@@ -44,8 +44,12 @@ describe('usersReducer', () => {
     expect(newState.users).toEqual([]);
   });
 
-  test('should handle GET_USERS_SUCCESS action type', () => {
-    const testData = [{ /* Define your test data here */ }];
+  test("should handle GET_USERS_SUCCESS action type", () => {
+    const testData = [
+      {
+        /* Define your test data here if needed */
+      },
+    ];
 
     const action = {
       type: UserActionTypes.GET_USERS_SUCCESS,
@@ -59,8 +63,10 @@ describe('usersReducer', () => {
     expect(newState.users).toEqual(testData);
   });
 
-  test('should handle GET_USERS_ERROR action type', () => {
-    const testData = { /* Define your test data here */ };
+  test("should handle GET_USERS_ERROR action type", () => {
+    const testData = {
+      /* Define your test data here if needed */
+    };
 
     const action = {
       type: UserActionTypes.GET_USERS_ERROR,
@@ -74,9 +80,9 @@ describe('usersReducer', () => {
     expect(newState.users).toEqual(testData);
   });
 
-  test('should return the initial state for unknown action types', () => {
+  test("should return the initial state for unknown action types", () => {
     const action = {
-      type: 'UNKNOWN_ACTION_TYPE',
+      type: "UNKNOWN_ACTION_TYPE",
     };
 
     const newState = usersReducer(initialState, action);

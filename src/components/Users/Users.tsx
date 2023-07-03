@@ -113,7 +113,7 @@ export default function UsersList() {
 
   if (!isLoading) {
     return (
-      <div className="UsersList">
+      <div className="UsersList" data-testid="UsersList">
         <Row>
           <Col sm={2}>
             <Button

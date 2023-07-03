@@ -1,13 +1,13 @@
-import React from 'react';
-import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
-import { MemoryRouter } from 'react-router-dom';
-import configureStore from 'redux-mock-store';
-import App from './App';
+import React from "react";
+import { render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import { MemoryRouter } from "react-router-dom";
+import configureStore from "redux-mock-store";
+import App from "./App";
 
 const mockStore = configureStore([]);
 
-describe('App', () => {
+describe("App", () => {
   let store;
 
   beforeEach(() => {
@@ -16,29 +16,29 @@ describe('App', () => {
     });
   });
 
-  test('renders UsersList component on the root path', () => {
+  test("renders UsersList component on the root path", () => {
     const { getByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/']}>
+        <MemoryRouter initialEntries={["/"]}>
           <App />
         </MemoryRouter>
       </Provider>
     );
 
-    const usersList = getByTestId('users-list');
+    const usersList = getByTestId("UsersList");
     expect(usersList).toBeInTheDocument();
   });
 
-  test('renders UserPosts component on the /user-posts path', () => {
+  test("renders UserPosts component on the /user-posts path", () => {
     const { getByTestId } = render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={['/user-posts']}>
+        <MemoryRouter initialEntries={["/user-posts"]}>
           <App />
         </MemoryRouter>
       </Provider>
     );
 
-    const userPosts = getByTestId('user-posts');
+    const userPosts = getByTestId("UsersPosts");
     expect(userPosts).toBeInTheDocument();
   });
 });

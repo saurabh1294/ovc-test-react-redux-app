@@ -20,8 +20,7 @@ const initialOrderState: UserPostsState = {
     {
       userId: 1,
       id: 1,
-      title:
-        "test1 title",
+      title: "test1 title",
       body: "test1 body",
     },
     {

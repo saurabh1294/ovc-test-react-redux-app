@@ -27,14 +27,14 @@ const override: CSSProperties = {
   borderColor: "red",
 };
 
-export default function UserPosts(props: any) {
+export default function UserPosts() {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [numRows, setNumRows] = useState(0);
   const [userPosts, setUserPosts] = useState([]);
   const dispatch = useDispatch();
   const location = useLocation();
-  const { userId } = location.state;
+  const userId = location?.state?.userId; // Ensure userId is properly set
 
   const isLoading =
     useSelector((state: any) => {
@@ -60,12 +60,10 @@ export default function UserPosts(props: any) {
   ];
 
   useEffect(() => {
-    fetchUsersPosts();
-  }, []);
-
-  //   useEffect(() => {
-  //     setUserPosts(postDetails);
-  //   }, [isLoading]);
+    if (userId) {
+      fetchUsersPosts();
+    }
+  }, [userId]);
 
   const goBack = () => {
     navigate(-1);
@@ -97,7 +95,7 @@ export default function UserPosts(props: any) {
 
   if (!isLoading) {
     return (
-      <div className="UsersPosts">
+      <div className="UsersPosts" data-testid="UsersPosts">
         <span className={`${styles.Error} mb-2`}>{error}</span>
         <br />
         <br />
@@ -118,6 +116,7 @@ export default function UserPosts(props: any) {
           className="mt-5"
           type="button"
           onClick={goBack}
+          data-testid="backButton"
         >
           Back
         </Button>
